@@ -1,0 +1,20 @@
+{
+  "name": "movie-catalogue",
+  "version": "1.0.0",
+  "description": "Dicoding - movie-catalogue PWAs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NurCahyoPrasetyo/movie-catalogue.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NurCahyoPrasetyo/movie-catalogue/issues"
+  },
+  "homepage": "https://github.com/NurCahyoPrasetyo/movie-catalogue#readme"
+}
