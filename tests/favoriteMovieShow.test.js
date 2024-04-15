@@ -1,4 +1,4 @@
-import FavoriteMovieView from "../src/scripts/views/pages/liked-movies/favorite-movie-search-view";
+import FavoriteMovieView from "../src/scripts/views/pages/liked-movies/favorite-movie-view";
 import FavoriteMovieShowPresenter from "../src/scripts/views/pages/liked-movies/favorite-movie-show-presenter";
 
 describe("Showing all favorite movies", () => {

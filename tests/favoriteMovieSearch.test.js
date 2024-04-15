@@ -1,7 +1,7 @@
 // import { spyOn } from "jest-mock";
 // import FavoriteMovieIdb from "../src/scripts/data/favorite-movie-idb";
 import FavoriteMovieSearchPresenter from "../src/scripts/views/pages/liked-movies/favorite-movie-search-presenter";
-import FavoriteMovieView from "../src/scripts/views/pages/liked-movies/favorite-movie-search-view";
+import FavoriteMovieView from "../src/scripts/views/pages/liked-movies/favorite-movie-view";
 
 describe("Searching movies", () => {
   let presenter;
