@@ -32,6 +32,18 @@ const FavoriteMovieIdb = {
   async deleteMovie(id) {
     return (await dbPromise).delete(OBJECT_STORE_NAME, id);
   },
+  // eslint-disable-next-line no-unused-vars, no-empty-function
+  async searchMovies(query) {
+    return (await this.getAllMovies()).filter((movie) => {
+      const loweredCaseMovieTitle = (movie.title || "-").toLowerCase();
+      const jammedMovieTitle = loweredCaseMovieTitle.replace(/\s/g, "");
+
+      const loweredCaseQuery = query.toLowerCase();
+      const jammedQuery = loweredCaseQuery.replace(/\s/g, "");
+
+      return jammedMovieTitle.indexOf(jammedQuery) !== -1;
+    });
+  },
 };
 
 export default FavoriteMovieIdb;
