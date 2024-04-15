@@ -46,8 +46,13 @@ To run tests, run the following command
 │   │   └── views
 │   ├── styles
 │   └── templates
+├── tests
+│   ├── contracts
+│   └── helpers
 ├── .eslintrc.js
 ├── .gitignore
+├── .babel.config.js
+├── .jest.config.js
 ├── webpack.commont.js
 ├── webpack.dev.js
 ├── webpack.prod.js
