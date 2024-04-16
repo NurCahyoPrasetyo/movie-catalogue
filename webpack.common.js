@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -27,6 +29,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: path.resolve(__dirname, "src/templates/index.html"),
@@ -39,5 +42,33 @@ module.exports = {
         },
       ],
     }),
+
+    new WorkboxWebpackPlugin.InjectManifest({
+      swSrc: path.resolve(__dirname, "src/scripts/sw.js"),
+      swDest: "./sw.bundle.js",
+    }),
+
+    // TODO: not use because new setup in sw.js
+    // new WorkboxWebpackPlugin.GenerateSW({
+    //   swDest: "./sw.bundle.js",
+    //   runtimeCaching: [
+    //     {
+    //       urlPattern: ({ url }) =>
+    //         url.href.startsWith("https://api.themoviedb.org/3/"),
+    //       handler: "StaleWhileRevalidate",
+    //       options: {
+    //         cacheName: "themoviedb-api",
+    //       },
+    //     },
+    //     {
+    //       urlPattern: ({ url }) =>
+    //         url.href.startsWith("https://image.tmdb.org/t/p/w500/"),
+    //       handler: "StaleWhileRevalidate",
+    //       options: {
+    //         cacheName: "themoviedb-image-api",
+    //       },
+    //     },
+    //   ],
+    // }),
   ],
 };
